@@ -307,18 +307,9 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     body: JSON.stringify({ name, email, message })
   });
 
-  showPopup("✅ Your message has been sent!");
+  alert("Your message has been sent!");
 });
 </script>
-
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <p>✅ Your message has been sent!</p>
-  </div>
-</div>
-
-
-
 
 
 
