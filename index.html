@@ -2,65 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>North Logistics Trucks Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #004080;
+      --accent: ##275DDB;
+      --light-bg: #f4f7fa;
+      --dark-bg: #002244;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9;
+      font-family: 'Roboto', sans-serif;
+      background: var(--light-bg);
       color: #333;
     }
+
     header {
-      background: #004080;
+      background: url('https://raw.githubusercontent.com/North-Trucks/NT2/refs/heads/main/images/Screenshot%202025-08-08%20202432.png') no-repeat center center;
+      background-size: cover;
       color: #fff;
-      padding: 20px;
       text-align: center;
+      padding: 140px 20px 100px;
     }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+    }
+
+    .cta-button {
+      background: #004080; /* Синий фон */
+      color: #fff;         /* Белый текст */
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #275DDB;
+    }
+
     nav {
-      background: #0066cc;
-      padding: 10px 0;
-      text-align: center;
+      background: var(--primary);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
     }
+
     nav a {
       color: #fff;
-      margin: 0 15px;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
       font-size: 16px;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent);
     }
+
     main {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 1200px;
+      margin: 40px auto;
       padding: 0 20px;
-      background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
     }
+
     section {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
-    h1, h2 {
-      color: #004080;
+
+    h2 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 20px;
     }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
     ul {
-      list-style-type: disc;
       margin-left: 20px;
+      font-size: 17px;
+      line-height: 1.6;
     }
+
+    .contact-info {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      margin-top: 30px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px;
+      font-size: 17px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #0066cc;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
     footer {
-      background: #004080;
+      background: var(--dark-bg);
       color: #fff;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 14px;
+      padding: 25px 10px;
+      font-size: 15px;
     }
-    @media (max-width: 600px) {
+
+    footer a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 32px;
+      }
+
       nav a {
-        display: block;
-        margin: 10px 0;
+        margin: 10px;
       }
     }
   </style>
@@ -69,65 +202,125 @@
 
 <header>
   <h1>North Logistics Trucks Inc</h1>
+  <p>Reliable logistics solutions for owner-operators and drivers nationwide</p>
+  <a href="#contact" class="cta-button">Get in Touch</a>
 </header>
 
 <nav>
   <a href="#home">Home</a>
   <a href="#about">About Us</a>
   <a href="#services">Services</a>
-  <a href="#whyus">Why Choose Us</a>
-  <a href="#contacts">Contact</a>
+  <a href="#why">Why Us</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <main>
   <section id="home">
-    <h2>Welcome to North Logistics Trucks Inc!</h2>
-    <p>We are a trusted partner for owner-operators with 26-foot box trucks, as well as for drivers seeking employment without owning their own truck. Our mission is to provide steady loads, profitable routes, and around-the-clock support across the United States.</p>
+    <h2>Welcome</h2>
+    <p>North Logistics Trucks Inc partners with professional drivers and owner-operators of 26-foot box trucks. Whether you own a truck or are looking to drive one, we offer steady routes, competitive pay, and 24/7 support across the country.</p>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>We specialize in professional support for drivers and owner-operators, helping them maximize their potential. With a fleet of 40 trucks and trusted brokers, we create opportunities for both truck owners and drivers looking to join a reliable company.</p>
+    <p>With a fleet of 40 trucks and decades of experience, we connect drivers to profitable loads through our network of trusted brokers. We ensure full compliance with DOT regulations, provide ELD systems, and handle insurance so our drivers can focus on the road.</p>
   </section>
 
   <section id="services">
     <h2>Our Services</h2>
-    <ul>
-      <li>Full Truckload (FTL) and Less Than Truckload (LTL) shipping</li>
-      <li>Steady lanes and trusted brokers</li>
-      <li>24/7 dispatcher support</li>
-      <li>Full compliance: insurance, ELD, paperwork</li>
-      <li>Opportunities for owner-operators and drivers without trucks</li>
-    </ul>
+    <div class="services-grid">
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/delivery.png" alt="FTL & LTL">
+        <h3>FTL & LTL Shipping</h3>
+        <p>We offer full truckload and less than truckload options for a wide range of clients and cargo types.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/clock.png" alt="Dispatcher">
+        <h3>24/7 Dispatcher Support</h3>
+        <p>Our dispatchers work around the clock to support drivers and resolve any issues on the road.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/contract.png" alt="Compliance">
+        <h3>Full Compliance</h3>
+        <p>We manage ELDs, insurance, and all required documentation — worry-free for you.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/ios-filled/100/steering-wheel.png" alt="Owner-Operator">
+        <h3>Driver Opportunities</h3>
+        <p>Whether you own a truck or not, we offer rewarding opportunities and long-term cooperation.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="whyus">
+  <section id="why">
     <h2>Why Choose Us</h2>
     <ul>
-      <li>Experienced dispatch team familiar with the market to help you find the best loads</li>
-      <li>Own fleet of 40 box trucks and reliable drivers</li>
-      <li>Operating throughout the United States — from major cities to remote areas</li>
-      <li>High broker ratings and excellent reputation among partners</li>
-      <li>Personalized approach to every driver, regardless of truck ownership</li>
+      <li>High broker ratings and nationwide reach</li>
+      <li>Fleet of 40+ well-maintained box trucks</li>
+      <li>Opportunities for drivers without trucks</li>
+      <li>Experienced logistics and dispatch team</li>
+      <li>Competitive rates and fast settlements</li>
     </ul>
   </section>
 
-  <section id="contacts">
+  <section id="contact">
     <h2>Contact</h2>
-    <p><strong>North Logistics Trucks Inc</strong><br />
-    700 E. Butterfield Road, Suite 300, office #32, Lombard IL, 60148<br />
-    Phone: 630-430-0347<br />
-    Email: <a href="mailto:main@northtrucks.com">main@northtrucks.com</a><br />
-    DOT #: 4372653<br />
-    MC #: 1712875</p>
+    <div class="contact-info">
+      <p><strong>North Logistics Trucks Inc</strong><br />
+      700 E. Butterfield Road, Suite 300, Office #32<br />
+      Lombard, IL 60148<br />
+      <strong>Phone:</strong> <a href="tel:6304300347">630-430-0347</a><br />
+      <strong>Email:</strong> <a href="mailto:main@northtrucks.com">main@northtrucks.com</a><br />
+      DOT #: 4372653 | MC #: 1712875</p>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="cta-button">Send Message</button>
+    </form>
+ 
+
+    <iframe src="https://www.google.com/maps?q=700%20E%20Butterfield%20Rd%20Lombard%20IL&output=embed"></iframe>
   </section>
 </main>
 
 <footer>
-  &copy; 2025 North Logistics Trucks Inc. All rights reserved.
-  <br />
-  <a href="privacy.html" style="color: #fff; text-decoration: underline;">Privacy Policy</a>
+  &copy; 2025 North Logistics Trucks Inc. All rights reserved. |
+  <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 </body>
 </html>
+
+<script>
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.querySelector("input[name='name']").value;
+  const email = document.querySelector("input[name='email']").value;
+  const message = document.querySelector("textarea[name='message']").value;
+
+  const webhookURL = "https://script.google.com/macros/s/AKfycbyp8UTm2aRHG-taYYprfSDtbT3gHAWAP1ycLucAHzcX7wHui3JSs-Woy7g9blpj2Erj/exec"; // ← вставь свой URL
+
+  await fetch(webhookURL, {
+    method: "POST",
+    body: JSON.stringify({ name, email, message })
+  });
+
+  showPopup("✅ Your message has been sent!");
+});
+</script>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <p>✅ Your message has been sent!</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
